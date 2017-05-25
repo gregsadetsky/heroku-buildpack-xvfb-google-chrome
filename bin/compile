@@ -5,7 +5,7 @@
 set -e
 
 # debug
-set -x
+# set -x
 
 # parse and derive params
 BUILD_DIR=$1
@@ -137,7 +137,7 @@ topic "Setting up Xvfb display"
 # Start an Xvfb display in the background at startup, and export the display
 # number so that chrome will use it
 cat <<EOF >$BUILD_DIR/.profile.d/010_xvfb.sh
-Xvfb :42 </dev/null &
+Xvfb :42 </dev/null &> /dev/null &
 export DISPLAY=:42
 EOF
 
